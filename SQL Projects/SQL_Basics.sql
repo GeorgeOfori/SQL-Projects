@@ -45,12 +45,34 @@ INSERT INTO Salaries VALUES
       --- SELECT STATEMENT--
 
 SELECT * FROM Employees; 
-SELECT * FROM Salaries
+
+---------------------------------------
+SELECT Last_name, Fisrt_name, Age, Qualification
+FROM Human_Resource.Employees;
+
+--------------------------------------------
+SELECT CONCAT(Last_name, ' ', Fisrt_name) AS Employee_name, Age, Qualification
+FROM Human_Resource.Employees
+ORDER BY Employee_name 
+LIMIT 10;
+
+--------------------------------------------------------------------
+SELECT CONCAT(Last_name, ' ', Fisrt_name) AS Customer_name, Quantity_purchased, ROUND(Quantity_purchased * Unit_price, 2) AS Price
+FROM Branch.Sales
+ORDER BY Price DESC 
+LIMIT 10;
+
+-----INTERPRETATION------
+--Selecting columns from the Sales table in the Branch Database or Schema
+--Combine First name and Last name to one column named Customer Name
+--Multiply quantity purchased column with unit price column and named as Price. Round the result to 2 decimal places
+--Sort the output from the highest using the Price column
+--Show the first top 10 rows
+
+
 
 /* Selecting with Top, Distinct, Count, As, Max, Min, Avg */
 
--- Select Top 5 rows
-SELECT TOP 5 * FROM Employees
 
 -- Distinct: Select unique values e.g Employee ID
 SELECT Distinct(EmployeeID) 
