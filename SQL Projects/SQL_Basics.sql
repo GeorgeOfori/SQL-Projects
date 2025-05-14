@@ -70,6 +70,12 @@ LIMIT 10;
 --Show the first top 10 rows
 
 
+----WHERE CLAUSE----------
+SELECT CONCAT(Last_name, ' ', Fisrt_name) AS Customer_name, Quantity_purchased, ROUND(Quantity_purchased * Unit_price, 2) AS Price
+FROM Branch.Sales
+WHERE Customer_name = 'Carlos' 
+      AND Quantity_purchased = 7
+
 
 /* Selecting with Top, Distinct, Count, As, Max, Min, Avg */
 
