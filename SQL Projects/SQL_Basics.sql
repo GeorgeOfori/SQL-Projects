@@ -76,6 +76,15 @@ FROM Branch.Sales
 WHERE Customer_name = 'Carlos' 
       AND Quantity_purchased = 7
 
+----------CASE STATEMENT---------------
+ SELECT CONCAT(Last_name, ' ', Fisrt_name) AS Customer_name, Quantity_purchased, ROUND(Quantity_purchased * Unit_price, 2) AS Price
+        CASE 
+            WHEN Quantity_purchased * Unit_price > 50
+                THEN 1
+            ELSE 0
+        END AS price_over_50
+FROM Branch.Sales 
+LIMIT 10;
 
 /* Selecting with Top, Distinct, Count, As, Max, Min, Avg */
 
