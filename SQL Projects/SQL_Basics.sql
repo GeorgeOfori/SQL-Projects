@@ -107,7 +107,21 @@ SELECT MIN(Salary) FROM Salaries
 SELECT AVG(Salary) FROM Salaries
 
 
+...................................................
+SELECT city, AVG(price) AS average_price
+FROM Listings
+GROUP BY city
+ORDER BY average_price
+LIMIT 1
+
+ 
 -----------------------------------------------
+
+SELECT department_id, FLOOR(AVG(satisfaction_score)) AS average_satisfaction_score
+FROM employee_satisfaction
+GROUP BY department_id
+
+....................................................
 /* WHERE Statement: +
    =, <>, >, <, AND, OR, LIKE, NULL, NOT NULL, IN
    (<> = not equal)
@@ -140,6 +154,6 @@ SELECT
     Gender, 
     Age,
     COUNT(Gender) AS GenderCount
-FROM BY Employees
+FROM  Employees
 GROUP BY Gender
 ORDER BY GenderCount	
